@@ -1,0 +1,10 @@
+
+button{
+    background-color: pink;
+}
+.secondary-btn{
+    background-color: royalblue;  /* when we r usng class we use . in the name intial*/ 
+}
+.third-btn{
+    background-color: seagreen;
+}
