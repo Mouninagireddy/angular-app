@@ -1,23 +1,30 @@
 
-<!--<h1>This is my Website</h1>
-<button type="submit">Search</button>
 
-<button type="submit">Submit</button>
-
-<input type="text" placeholder="Enter firstName">
-
-<input type="number" name="studentName" id="studentId"> -->
-    
-    <p>This is {{appType}}</p><!--String interpolation we r accesing this variable from ts file for 20 & 22 line-->
+        {{appType}}<!--String interpolation we r accesing this variable from ts file for 20 & 22 line--> <br>
 
 <button type="submit">Search</button>
 
-<button class="secondary-btn" type="submit" (click)="searchByCaseNumber()">Search Case Number</button> <!--we have 2 buttons here to give diff colors 
-    for buttons we use cls and give name to cls -->
-
-<button class="third-btn" type="submit" (click)="getAllEmployees()">Employee</button>
 
 <button type="submit" (click)="changeToAngular()">This is Angular</button>
 
 <button type="submit" (click)="changeToReact()">This is React</button>
 
+<button type="submit" (click)="getAllStudents()">Students</button>
+{{studentResponse | json}} <!--it's a object so converting into json format using | json in sting interpolation-->
+
+<button class="third-btn" type="submit" (click)="getAllEmployees()">Employee</button>
+
+    <table *ngIf = "showTable">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+        <tr *ngFor= "let employee of employeeResponse.data">  <!--for loop for html we have resp in employeeResponse 
+                        we r giving variable employee reference so we can use that ref in tables to get the data dynamic
+                        we r taking only data from the response so we r taking the employeeResponse.data status not-->
+            <td>{{employee.id}}</td>
+            <td>{{employee.employee_name}}</td>
+            <td>{{employee.employee_salary}}</td>
+        </tr>
+    </table>
